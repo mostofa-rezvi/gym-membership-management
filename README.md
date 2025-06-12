@@ -55,41 +55,6 @@ A full-stack Gym Membership Management System built with **Angular 18** and **Sp
 
 ---
 
-## 📁 Folder Structure
-
-### 🖥️ Frontend: `gym-frontend/`
-
-```
-src/
-├── app/
-│   ├── components/
-│   │   ├── membership-dashboard/
-│   │   ├── member-card/
-│   │   ├── payment-modal/
-│   │   └── charts/
-│   ├── models/
-│   │   └── member.model.ts
-│   ├── services/
-│   │   └── member.service.ts
-│   └── app.module.ts
-```
-
-### 🖧 Backend: `gym-backend/`
-
-```
-src/
-├── main/
-│   ├── java/com/mostofa/gym/
-│   │   ├── controller/
-│   │   ├── model/
-│   │   ├── repository/
-│   │   └── service/
-│   └── resources/
-│       └── application.properties
-```
-
----
-
 ## 🚀 Getting Started
 
 ### ✅ Prerequisites
@@ -104,6 +69,8 @@ src/
 
 ### ▶️ Backend Setup (Spring Boot)
 
+ym-membership-management/gym-backend
+   ```
 1. Clone the repository:
 
    ```bash
@@ -152,16 +119,6 @@ src/
 
 ---
 
-## 🖼️ Example Screenshots
-
-> *Add screenshots of your app here*
-
-- 📝 Member Registration Form  
-- 💰 Payment Modal  
-- 📈 Dashboard with Charts  
-
----
-
 ## 🔐 API Endpoints
 
 ### 👤 Member Controller
@@ -179,6 +136,8 @@ DELETE /api/members/{id}
 GET    /api/payments
 POST   /api/payments
 GET    /api/payments/member/{memberId}
+PUT    /api/payments/{id}
+DELETE /api/payments/{id}
 ```
 
 ---
@@ -186,9 +145,8 @@ GET    /api/payments/member/{memberId}
 ## 👨‍💻 Author
 
 **Mostofa Rezvi**  
-📧 mostofa@example.com  
-📍 Azimpur, Dhaka  
-🎓 Master's in Information Technology – University of Dhaka
+📧 mostofa.aminur.rezvi@gmail.com  
+📍 Azimpur, Dhaka
 
 ---
 
