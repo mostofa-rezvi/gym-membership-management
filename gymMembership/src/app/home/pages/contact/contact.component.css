@@ -1,0 +1,274 @@
+:root {
+  --primary-color: #ff6600; /* Energetic Orange */
+  --dark-bg: #1a1a1a;
+  --secondary-dark-bg: #2b2b2b;
+  --light-gray: #f4f4f4;
+  --text-color: #e0e0e0;
+  --heading-font: "Teko", sans-serif;
+  --body-font: "Roboto", sans-serif;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  font-family: var(--body-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+.section-title {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.section-subtitle {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  background-color: blueviolet;
+  border-color: var(--primary-color);
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e65c00;
+  border-color: #e65c00;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+}
+
+/* Card Styling for Dark Theme */
+.card {
+  background-color: var(--secondary-dark-bg);
+  border: 1px solid #444;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  border-color: var(--primary-color);
+}
+
+.hero-section {
+  height: 50vh;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Add FontAwesome for icons. In index.html: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> */
+
+.contact-info-item {
+  margin-bottom: 2rem;
+}
+
+.contact-info-item h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.contact-info-item i {
+  margin-right: 15px;
+}
+
+.contact-info-item p {
+  font-size: 1.1rem;
+  margin-left: 35px;
+  color: var(--text-color);
+}
+
+.form-control {
+  background-color: #333;
+  border: 1px solid #555;
+  color: white;
+  padding: 1rem;
+}
+
+.form-control:focus {
+  background-color: #444;
+  border-color: var(--primary-color);
+  color: white;
+  box-shadow: none;
+}
+
+.form-control::placeholder {
+  color: #aaa;
+}
+
+/*
+* MODERN CONTACT PAGE STYLES
+*/
+
+/* == Contact Info Cards == */
+.contact-info-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary-dark-bg);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #444;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  border-left-color: var(--primary-color);
+}
+
+.contact-info-card .icon-box {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 102, 0, 0.1); /* Transparent orange */
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-right: 20px;
+}
+
+.contact-info-card .icon-box i {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.info-text h5 {
+  font-family: var(--body-font);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.info-text p {
+  color: var(--text-color);
+  margin-bottom: 0;
+  font-size: 1.1rem;
+}
+
+/*
+* PREMIUM CONTACT FORM STYLES
+*/
+
+.contact-form-premium {
+  background-color: var(--secondary-dark-bg);
+  border-radius: 15px;
+  overflow: hidden; /* Crucial for keeping the child corners rounded */
+  border: 1px solid #444;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* == 1. Form Header == */
+.form-header {
+  background: var(--primary-color);
+  padding: 30px;
+  text-align: center;
+}
+
+.form-header .form-title {
+  color: #3b3b3b;
+  font-family: var(--heading-font);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.form-header .form-subtitle {
+  color: #3b3b3b;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+/* == 2. Form Body == */
+.form-body {
+  padding: 40px;
+}
+
+/* == Underline Input Fields == */
+.form-floating > .form-control {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #555;
+  border-radius: 0; /* Remove default radius */
+  color: #fff;
+  padding-left: 0; /* Align with label */
+  padding-right: 0;
+  transition: border-color 0.3s ease;
+}
+
+/* Floating label color */
+.form-floating > label {
+  color: #999;
+  padding-left: 0; /* Align with input */
+}
+
+/* Focus State for Underline Inputs */
+.form-floating > .form-control:focus {
+  background-color: transparent;
+  border-color: var(--primary-color);
+  box-shadow: none; /* Remove Bootstrap's default glow */
+  color: #fff;
+}
+
+/* Button Enhancement */
+.form-body .btn-primary {
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: var(--body-font);
+}

@@ -39,6 +39,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/login").permitAll()
                         .requestMatchers("/api/user/saveUser", "/api/user/updateUser").permitAll()
                         .requestMatchers("/api/members", "/api/payments").permitAll()
+                        .requestMatchers("/api/**").permitAll()
 //                        .requestMatchers("/api/members", "/api/payments").hasAnyRole("ADMIN", "MEMBER")
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

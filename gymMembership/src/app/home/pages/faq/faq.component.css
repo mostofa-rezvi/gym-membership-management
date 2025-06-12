@@ -1,0 +1,116 @@
+/* --- START: Common Styles (Duplicated for this component) --- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:host {
+  --primary-color: #ff6700;
+  --primary-hover: #e65c00;
+  --secondary-color: #0a2540;
+  --dark-color: #212529;
+  --light-gray: #f8f9fa;
+  --text-color: #5a6169;
+  --border-color: #dee2e6;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  --box-shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
+  display: block; /* Required for :host styling */
+}
+
+.section-container {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark-color);
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--text-color);
+  max-width: 650px;
+  margin: 0 auto 4rem auto;
+  line-height: 1.7;
+}
+
+.highlight-text {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+/* --- END: Common Styles --- */
+
+/* --- START: FAQ Specific Styles --- */
+.accordion-item {
+  border: 1px solid var(--border-color);
+  border-radius: 15px !important;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--box-shadow);
+  overflow: hidden; /* Important for border-radius */
+  transition: all 0.3s ease;
+}
+.accordion-item:hover {
+  box-shadow: var(--box-shadow-hover);
+  border-color: var(--primary-color);
+}
+
+.accordion-header {
+  border-radius: 15px;
+}
+
+.accordion-button {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--dark-color);
+  padding: 1.5rem;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: none;
+}
+
+.accordion-button::after {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: auto;
+  content: "";
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff6700'%3e%3cpath fill-rule='evenodd' d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3e%3c/svg%3e");
+  transform: rotate(0deg);
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 103, 0, 0.25);
+  border-color: var(--primary-color);
+}
+
+.accordion-body {
+  padding: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}

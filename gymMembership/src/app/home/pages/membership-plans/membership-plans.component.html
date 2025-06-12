@@ -1,0 +1,82 @@
+<!-- Add this wrapper div to apply the dark theme -->
+<div class="membership-plans-awesome">
+
+  <!-- Add this SVG for the curved shape divider -->
+  <div class="custom-shape-divider-top">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path
+        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+        class="shape-fill"></path>
+    </svg>
+  </div>
+
+  <div class="container section-container">
+    <h2 class="section-title">Choose Your Membership Plan</h2>
+    <p class="section-subtitle">Simple, transparent pricing. No hidden fees. Find the perfect plan to kickstart your
+      fitness journey with us.</p>
+
+    <!-- The 'row' div is the grid for our new cards -->
+    <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+      <!-- Basic Plan -->
+      <div class="col">
+        <!-- Use the new 'pricing-card' class -->
+        <div class="pricing-card">
+          <div class="card-header">
+            <h4>Basic</h4>
+          </div>
+          <div class="card-body">
+            <div class="price-tag">৳2,500<span>/month</span></div>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-circle-fill"></i> Gym Access</li>
+              <li><i class="bi bi-check-circle-fill"></i> Locker Rooms</li>
+              <li class="disabled"><i class="bi bi-x-circle-fill"></i> Group Fitness Classes</li>
+              <li class="disabled"><i class="bi bi-x-circle-fill"></i> Guest Passes</li>
+            </ul>
+            <button type="button" class="btn-pricing">Select Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pro Plan (Most Popular) -->
+      <div class="col">
+        <!-- Add the 'popular' class here -->
+        <div class="pricing-card popular">
+          <div class="card-header">
+            <h4>Pro</h4>
+          </div>
+          <div class="card-body">
+            <div class="price-tag">৳4,500<span>/month</span></div>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-circle-fill"></i> Gym Access</li>
+              <li><i class="bi bi-check-circle-fill"></i> Locker Rooms</li>
+              <li><i class="bi bi-check-circle-fill"></i> All Group Classes</li>
+              <li><i class="bi bi-check-circle-fill"></i> 2 Guest Passes/mo</li>
+            </ul>
+            <!-- Add the 'btn-glow' class for the special button -->
+            <button type="button" class="btn-pricing btn-glow">Select Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Elite Plan -->
+      <div class="col">
+        <div class="pricing-card">
+          <div class="card-header">
+            <h4>Elite</h4>
+          </div>
+          <div class="card-body">
+            <div class="price-tag">৳7,500<span>/month</span></div>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-circle-fill"></i> All Pro Benefits</li>
+              <li><i class="bi bi-check-circle-fill"></i> Unlimited Guest Passes</li>
+              <li><i class="bi bi-check-circle-fill"></i> Monthly Personal Training</li>
+              <li><i class="bi bi-check-circle-fill"></i> Smoothie Bar Discount</li>
+            </ul>
+            <button type="button" class="btn-pricing">Select Plan</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="card h-100 shadow-sm">
+  <div class="card-header bg-primary text-white">
+    <h5 class="mb-0" style="color: white;">
+      <i class="bi bi-person-plus-fill me-2" style="color: white;"></i>New Member Registration
+    </h5>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" id="name" class="form-control" formControlName="name">
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" class="form-control" formControlName="email">
+        </div>
+        <div class="col-md-6">
+          <label for="dob" class="form-label">Date of Birth</label>
+          <input type="date" id="dob" class="form-control" formControlName="dob">
+        </div>
+        <div class="col-md-6">
+          <label for="joinDate" class="form-label">Join Date</label>
+          <input type="date" id="joinDate" class="form-control" formControlName="joinDate">
+        </div>
+        <div class="col-12">
+          <label for="membershipType" class="form-label">Membership Type</label>
+          <select id="membershipType" class="form-select" formControlName="membershipType">
+            <option *ngFor="let type of membershipTypes" [value]="type">{{ type }}</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <label class="form-label">Additional Services</label>
+          <div class="d-flex flex-wrap gap-3" formArrayName="services">
+            <div *ngFor="let service of serviceTypes; let i = index" class="form-check">
+              <input class="form-check-input" type="checkbox" [formControlName]="i" [id]="'service' + i">
+              <label class="form-check-label" [for]="'service' + i">{{ service }}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 mt-4" [disabled]="registrationForm.invalid">
+        <i class="bi bi-check-circle me-2"></i>Add Member
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,107 @@
+/* --- START: Common Styles (Duplicated for this component) --- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:host {
+  --primary-color: #ff6700;
+  --primary-hover: #e65c00;
+  --secondary-color: #0a2540;
+  --dark-color: #212529;
+  --light-gray: #f8f9fa;
+  --text-color: #5a6169;
+  --border-color: #dee2e6;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  --box-shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
+  display: block; /* Required for :host styling */
+}
+
+.section-container {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark-color);
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--text-color);
+  max-width: 650px;
+  margin: 0 auto 4rem auto;
+  line-height: 1.7;
+}
+
+.highlight-text {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+/* --- END: Common Styles --- */
+
+/* --- START: About Us Specific Styles --- */
+.hero-image {
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease;
+}
+
+.hero-image:hover {
+  box-shadow: var(--box-shadow-hover);
+  transform: scale(1.02);
+}
+
+.feature-card {
+  background: white;
+  border: 0;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.feature-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-hover)
+  );
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 15px rgba(255, 103, 0, 0.3);
+}
+
+.feature-card h4 {
+  font-weight: 700;
+  color: var(--dark-color);
+}

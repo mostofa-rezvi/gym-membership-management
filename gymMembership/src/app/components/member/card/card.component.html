@@ -1,0 +1,31 @@
+<div class="card member-card shadow-sm">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h5 class="card-title mb-0">{{ member.name }}</h5>
+    <span class="badge" [ngClass]="{
+          'bronze-badge': member.membershipType === membershipType.BRONZE,
+          'silver-badge': member.membershipType === membershipType.SILVER,
+          'gold-badge': member.membershipType === membershipType.GOLD,
+          'platinum-badge': member.membershipType === membershipType.PLATINUM
+      }">{{ member.membershipType }}</span>
+  </div>
+  <div class="card-body">
+
+    <!-- Only show full details if summary is false -->
+    <div *ngIf="!summary">
+      <p>Email: {{ member.email }}</p>
+      <p>DOB: {{ member.dob | date }}</p>
+      <p>Join Date: {{ member.joinDate | date }}</p>
+      <p>Services: {{ member.services.join(', ') }}</p>
+      <p>Total Payments: {{ member.payments.length }}</p>
+    </div>
+  </div>
+
+  <div class="card-footer bg-light d-flex justify-content-end gap-2">
+    <button class="btn btn-sm btn-outline-success" (click)="onAddPayment()">
+      <i class="bi bi-currency-dollar me-1"></i>Add Payment
+    </button>
+    <button class="btn btn-sm btn-outline-danger" (click)="onDelete()">
+      <i class="bi bi-trash-fill me-1"></i>Delete
+    </button>
+  </div>
+</div>

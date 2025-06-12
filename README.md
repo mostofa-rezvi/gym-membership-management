@@ -97,7 +97,7 @@ ym-membership-management/gym-backend
 1. Navigate to frontend:
 
    ```bash
-   cd ../gym-frontend
+   cd ../gymMembership
    ```
 
 2. Install dependencies:

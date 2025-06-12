@@ -1,0 +1,115 @@
+/* --- START: Common Styles (Duplicated for this component) --- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:host {
+  --primary-color: #ff6700;
+  --primary-hover: #e65c00;
+  --secondary-color: #0a2540;
+  --dark-color: #212529;
+  --light-gray: #f8f9fa;
+  --text-color: #5a6169;
+  --border-color: #dee2e6;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  --box-shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
+  display: block; /* Required for :host styling */
+}
+
+.section-container {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark-color);
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--text-color);
+  max-width: 650px;
+  margin: 0 auto 4rem auto;
+  line-height: 1.7;
+}
+
+.highlight-text {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+/* --- END: Common Styles --- */
+
+/* --- START: Member Reviews Specific Styles --- */
+.review-card {
+  border: 0;
+  border-radius: 15px;
+  background-color: var(--light-gray);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.review-card::before {
+  content: "\f22b"; /* Bootstrap Icons quote */
+  font-family: "bootstrap-icons";
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  font-size: 4rem;
+  color: var(--border-color);
+  z-index: 1;
+}
+
+.card-body {
+  position: relative;
+  padding: 0;
+  z-index: 2;
+}
+
+.review-stars {
+  color: #ffc107;
+  font-size: 1.2rem;
+}
+
+.card-text {
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--dark-color);
+}
+
+.card-footer {
+  text-align: left;
+  background: transparent;
+  border: 0;
+  padding: 1.5rem 0 0 0;
+  z-index: 2;
+  position: relative;
+}
+
+.card-footer p {
+  color: var(--dark-color);
+}

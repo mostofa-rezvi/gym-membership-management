@@ -1,0 +1,698 @@
+:root {
+  --primary-color: #ff6b35;
+  --secondary-color: #2c3e50;
+  --accent-color: #f39c12;
+  --dark-bg: #1a1a1a;
+  --light-bg: #f8f9fa;
+  --gradient-primary: linear-gradient(135deg, #ff6b35 0%, #f39c12 100%);
+  --gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+:root {
+  --gradient-dark: linear-gradient(to right, #1f1c2c, #928dab);
+  --accent-color: #f39c12;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+  background-color: #f9f9f9;
+}
+
+/* Navigation */
+.navbar {
+  background-color: rgba(26, 26, 26, 0.95);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 15px 0;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--accent-color);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-btn {
+  padding: 10px 25px;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgb(255, 157, 0);
+}
+
+/* =================================================================== */
+/* Part: 1 - Hero Section                                             */
+/* =================================================================== */
+/*
+* HERO SECTION REDESIGN (CSS-ONLY)
+*/
+
+.hero-section {
+  position: relative; /* Required for the overlay */
+  height: 90vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center; /* Vertically centers the content */
+  color: #fff;
+  /* Assumes background image is applied here, e.g.: */
+  background-image: url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48");
+  background-size: cover;
+  background-position: center;
+  
+}
+
+/* This creates the dark overlay without needing a new HTML element */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(26, 26, 26, 0.9) 0%,
+    rgba(26, 26, 26, 0.4) 100%
+  );
+  z-index: 1;
+}
+
+/* Ensure the content sits on top of the overlay */
+.hero-section .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  text-align: left; /* Modern left-aligned look */
+}
+
+/* Redesigning the H1 heading */
+.hero-section .hero-content h1 {
+  font-family: var(--heading-font);
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.5rem;
+  /* We MUST use !important to override the inline style="color: #000000;" */
+  color: #ffffff !important;
+}
+
+/* Targeting the SPAN inside the H1 to apply the brand color */
+.hero-section .hero-content h1 span {
+  /* We MUST use !important here as well */
+  color: var(--primary-color) !important;
+}
+
+/* Redesigning the lead paragraph */
+.hero-section .hero-content p.lead {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+  /* Overriding the inline style="color: #e0ff8b;" */
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Styling the custom button to match the site's primary button */
+.hero-section .hero-content .btn-hero {
+  display: inline-block;
+  background-color: #d13200;
+  border: 2px solid var(--primary-color);
+  color: white;
+  padding: 12px 35px;
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-section .hero-content .btn-hero:hover {
+  background-color: #e65c00;
+  border-color: #e65c00;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 80vh;
+  }
+  .hero-section .hero-content {
+    text-align: center; /* Center content on smaller screens */
+  }
+  .hero-section .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  .hero-section .hero-content p.lead {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+}
+
+/* =================================================================== */
+/* Part: 2 - Stats Section                          */
+/* =================================================================== */
+
+.stats-section {
+  background: var(--gradient-dark);
+  padding: 100px 20px;
+  color: #000000;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.stats-section::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: url("data:image/svg+xml;utf8,<svg ... />"); /* Keep your existing SVG here */
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.stats-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.stats-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.stats-subtitle {
+  font-size: 18px;
+  color: #140000;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.stat-item {
+  background: #ffedd0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.stat-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: #f39c12;
+}
+
+.stat-number {
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: var(--accent-color);
+  display: block;
+  margin-bottom: 35px;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #200268;
+  font-weight: 500;
+}
+
+/* =================================================================== */
+/* Part: 3 - About Section                                            */
+/* =================================================================== */
+
+.about-section {
+  background: #f8f9fa;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: #7f8c8d;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.feature-box {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 40px;
+  color: #e67e22;
+  margin-bottom: 15px;
+}
+
+.feature-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.feature-box p {
+  color: #7f8c8d;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/*=================================================================== 
+Part 4: Premium Services/Pricing Section                         
+=================================================================== */
+
+:root {
+  --primary-color: #ff4d00;
+  --secondary-color: #f4f6f8;
+  --accent-color: #ffb400;
+  --light-bg: #fccccc;
+  --text-dark: #1a1d24;
+  --text-muted: rgba(0, 0, 0, 0.6);
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    #d13200 100%
+  );
+  --transition-fast: all 0.3s ease;
+}
+
+.services-section {
+  background-color: var(--light-bg);
+  padding: 0px 0 100px;
+  color: var(--text-dark);
+  position: relative;
+}
+
+/* Remove dark effect from divider and match light background */
+.custom-shape-divider-top .shape-fill {
+  fill: #f1c40f;
+}
+
+.services-section .section-title,
+.services-section .section-subtitle {
+  color: var(--text-dark);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05); /* Light, modern shadow */
+  transition: var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Highlighted Popular Card */
+.service-card.popular {
+  border: 2px solid var(--primary-color);
+  background: linear-gradient(to top, #fff, #fffefb);
+}
+
+.popular-badge {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #000000;
+  padding: 6px 18px;
+  border-radius: 16px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.service-price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 1rem 0;
+}
+
+.service-price span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 5px;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.service-features li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+  color: var(--text-dark);
+}
+
+.service-features li:last-child {
+  border-bottom: none;
+}
+
+.service-features li i {
+  color: var(--accent-color);
+  margin-right: 10px;
+}
+
+.service-features li.disabled {
+  color: #b0b0b0;
+}
+.service-features li.disabled i.fa-times {
+  color: #b0b0b0;
+}
+
+/* Call-to-action Button */
+.service-btn {
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  text-align: center;
+  background-color: #ffa8a8;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-fast);
+  margin-top: auto;
+}
+
+.service-btn:hover {
+  background-color: #f39c12;
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+.service-btn.btn-primary-glow {
+  background: var(--gradient-primary);
+  color: #000000;
+  border: none;
+  box-shadow: 0 8px 20px rgba(255, 77, 0, 0.842);
+}
+
+.service-btn.btn-primary-glow:hover {
+  box-shadow: 0 12px 30px rgba(255, 77, 0, 0.6);
+  transform: translateY(-3px);
+}
+
+/* =================================================================== */
+/* Part: 5 - Fiery Sunset - Warm Color Palette                           */
+/* =================================================================== */
+:root {
+  /* A deep, rich sienna for dark backgrounds or primary text */
+  --primary-color: #a63a00;
+
+  /* An energetic, vibrant orange for key sections */
+  --secondary-color: #d35400;
+
+  /* A bright, sunny yellow for buttons and calls-to-action */
+  --accent-color: #f1c40f;
+
+  /* A warm, soft off-white for light text, much easier on the eyes */
+  --text-light: #fdf5e6;
+
+  /* A very dark, warm charcoal for high-contrast text */
+  --dark-foundation: #0a0600;
+}
+
+/* =================================================================== */
+/* CTA Section - Redesigned with Warm Colors                      */
+/* =================================================================== */
+.cta-section-v2 {
+  position: relative;
+  min-height: 30vh; /* Increased height for a more epic feel */
+  padding: 5rem 0;
+
+  /* The NEW Parallax Background with a warm, fiery gradient */
+  background: 
+    /* The warm overlay */ linear-gradient(
+      rgba(247, 216, 195, 0.404),
+      rgba(166, 58, 0, 0.267)
+    ),
+    /* The image (using a more neutral, powerful image) */
+      url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1400&q=80")
+      no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* This creates the parallax effect */
+  color: var(--text-light); /* Use the warm off-white for all text */
+}
+
+.cta-section-v2 h2 {
+  /* A subtle dark shadow provides better contrast and depth */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  position: relative;
+  padding-bottom: 1.5rem;
+
+  /* Decorative line uses the new accent color */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+  }
+}
+
+/* The new CTA button, styled for the warm theme */
+.btn-cta-shine {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: black;
+  background-color: #f1c40f;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    transition: left 0.6s ease;
+    z-index: -1;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    /* A warm, glowing shadow */
+    box-shadow: 0 10px 25px rgba(241, 196, 15, 0.4);
+
+    &::before {
+      left: 100%;
+    }
+  }
+}
+
+/* =================================================================== */
+/* Part: 6 - Scroll to Top Button v2: Redesigned with Warm Colors           */
+/* =================================================================== */
+.scroll-top-v2 {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  background: var(--dark-foundation); /* Dark base */
+  border: 2px solid var(--accent-color); /* Bright accent border */
+  color: var(--accent-color); /* Bright accent icon */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1000;
+
+  /* Initial hidden state */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* The visible state */
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Hover state inverts the colors for a satisfying effect */
+  &:hover {
+    background: var(--accent-color);
+    color: var(--dark-foundation);
+    transform: scale(1.1) rotate(360deg);
+    box-shadow: 0 5px 15px rgba(241, 196, 15, 0.6);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}

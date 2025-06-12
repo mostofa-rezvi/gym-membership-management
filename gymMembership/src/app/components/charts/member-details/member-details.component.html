@@ -1,0 +1,78 @@
+<div class="modal-backdrop fade show" (click)="closeModal()"></div>
+<div class="modal fade show d-block" tabindex="-1" role="dialog" (click)="closeModal()">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document" (click)="$event.stopPropagation()">
+    <div class="modal-content border-0 shadow">
+      <div class="modal-header bg-light border-0">
+        <div class="d-flex align-items-center">
+          <div
+            class="avatar-lg bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3">
+            {{ member.name }}
+          </div>
+          <div>
+            <h5 class="modal-title mb-0">{{ member.name }}</h5>
+            <small class="text-muted">{{ member.email }}</small>
+          </div>
+        </div>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body p-4">
+        <div class="row g-4">
+          <!-- Member Info -->
+          <div class="col-md-6">
+            <h6 class="mb-3 text-primary"><i class="bi bi-person-badge-fill me-2"></i>Membership Details</h6>
+            <dl class="row">
+              <dt class="col-sm-5">Member ID</dt>
+              <dd class="col-sm-7">#{{ member.id }}</dd>
+
+              <dt class="col-sm-5">Membership Type</dt>
+              <dd class="col-sm-7"><span class="badge bg-primary-subtle text-primary-emphasis">{{ member.membershipType
+                  }}</span></dd>
+
+              <dt class="col-sm-5">Joined On</dt>
+              <dd class="col-sm-7">{{ member.joinDate | date:'fullDate' }}</dd>
+
+              <dt class="col-sm-5">Active Services</dt>
+              <dd class="col-sm-7">
+                <div class="d-flex flex-wrap gap-1">
+                  <span *ngFor="let service of member.services"
+                    class="badge bg-secondary-subtle text-secondary-emphasis">{{ service }}</span>
+                </div>
+              </dd>
+            </dl>
+          </div>
+
+          <!-- Payment History -->
+          <div class="col-md-6">
+            <h6 class="mb-3 text-success"><i class="bi bi-cash-stack me-2"></i>Payment History</h6>
+            <div *ngIf="member.payments && member.payments.length > 0; else noPayments">
+              <div class="table-responsive" style="max-height: 200px; overflow-y: auto;">
+                <table class="table table-sm table-striped">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th class="text-end">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let payment of member.payments">
+                      <td>{{ payment.date | date:'mediumDate' }}</td>
+                      <td class="text-end">{{ payment.amount | currency }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <ng-template #noPayments>
+              <div class="text-center text-muted p-3 bg-light rounded">
+                <i class="bi bi-emoji-frown me-1"></i> No payments have been recorded.
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bg-light border-0">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

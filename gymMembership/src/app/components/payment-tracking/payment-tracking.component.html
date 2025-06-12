@@ -1,0 +1,29 @@
+<div class="modal fade" #paymentModal tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Payment for <strong>{{ member.name }}</strong></h5>
+        <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #paymentForm="ngForm" (ngSubmit)="submitPayment()">
+          <div class="mb-3">
+            <label for="amount" class="form-label">Amount ($)</label>
+            <input type="number" class="form-control" id="amount" name="amount" [(ngModel)]="paymentAmount" required
+              min="1">
+          </div>
+          <div class="mb-3">
+            <label for="date" class="form-label">Payment Date</label>
+            <input type="date" class="form-control" id="date" name="date" [(ngModel)]="paymentDate" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="submitPayment()" [disabled]="paymentForm.invalid">
+          Save Payment
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

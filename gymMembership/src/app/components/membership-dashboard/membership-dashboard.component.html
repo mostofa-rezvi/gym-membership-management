@@ -1,0 +1,141 @@
+<!-- dashboard.component.html -->
+
+<div class="container-fluid p-4 p-md-5 bg-light">
+  <!-- Page Header -->
+  <div class="page-header mb-5">
+    <h1 class="display-6 fw-bold">Membership Dashboard</h1>
+    <p class="text-muted">Manage members, track payments, and view growth over time.</p>
+  </div>
+
+  <div class="row g-4 g-lg-5">
+    <!-- Charts Column -->
+    <div class="col-12 mb-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <app-membership-chart></app-membership-chart>
+        </div>
+      </div>
+    </div>
+
+    <!-- Registration Form Column -->
+    <div class="col-xl-4">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-body p-4">
+          <app-registration [membershipTypes]="membershipTypes" [serviceTypes]="serviceTypes"
+            (memberCreated)="onMemberCreated($event)">
+          </app-registration>
+        </div>
+        <hr>
+        <a routerLink="/login" class="btn btn-secondary">Logout</a>
+      </div>
+
+    </div>
+
+    <!-- Member List Column -->
+    <div class="col-xl-8">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-header bg-white border-0 pt-3 pb-3 d-flex justify-content-between align-items-center">
+          <h5 class="mb-0 text-white"><i class="bi bi-people-fill me-2" style="color: white;"></i>Current Members ({{
+            members().length }})</h5>
+
+          <!-- Optional: Add a search filter here for better UX -->
+          <div class="w-50">
+            <input type="text" class="form-control" style="background-color: white;"
+              placeholder="Search by name or email..." [value]="searchTerm()" (input)="onSearch($event)">
+          </div>
+        </div>
+        <div class="card-body p-0">
+          <div *ngIf="paginatedMembers().length > 0; else noMembers">
+
+            <div class="list-group list-group-flush">
+
+              <div *ngFor="let member of paginatedMembers(); trackBy: members"
+                class="list-group-item list-group-item-action p-3" role="button" (click)="onViewDetailsClicked(member)">
+                <div class="d-flex w-100 align-items-center">
+
+                  <!-- Avatar -->
+                  <div class="flex-shrink-0 me-3">
+                    <div
+                      class="avatar bg-secondary-subtle text-secondary-emphasis rounded-circle d-flex align-items-center justify-content-center">
+                      {{ member.name.charAt(0) }}
+                    </div>
+                  </div>
+                  <!-- Member Info -->
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-start">
+                      <div>
+                        <h6 class="mb-0 fw-bold">{{ member.name }}</h6>
+                        <small class="text-muted">{{ member.membershipType }} Member</small>
+                      </div>
+                      <span class="badge" [ngClass]="member.membershipType">
+                        {{ member.membershipType }}
+                      </span>
+                      <span class="badge" [ngClass]="getPaymentStatus(member).cssClass">
+                        <i class="bi bi-credit-card me-1"></i> {{ getPaymentStatus(member).status }}
+                      </span>
+                    </div>
+                    <div class="d-flex gap-3 mt-2 text-muted small">
+                      <span><i class="bi bi-envelope-fill me-1"></i> {{ member.email }}</span>
+                      <span><i class="bi bi-calendar-check me-1"></i> Joined: {{ member.joinDate | date:'mediumDate'
+                        }}</span>
+                      <span *ngIf="getPaymentStatus(member).lastPaymentDate as lastPayDate">
+                        <i class="bi bi-cash-coin me-1"></i> Last Paid: {{ lastPayDate | date:'mediumDate' }}
+                      </span>
+                    </div>
+                  </div>
+                  <!-- Action Buttons -->
+                  <div class="ms-4">
+                    <button class="btn btn-sm btn-outline-primary"
+                      (click)="onAddPaymentClicked(member); $event.stopPropagation()">
+                      <i class="bi bi-currency-dollar me-1"></i> Payments
+                    </button>
+                    <button class="btn btn-sm btn-outline-danger ms-2"
+                      (click)="onDeleteClicked(member.id); $event.stopPropagation()">
+                      <i class="bi bi-trash3"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ng-template #noMembers>
+            <!-- Enhanced Empty State -->
+            <div class="text-center p-5">
+              <div class="display-4 text-muted mb-3"><i class="bi bi-person-x"></i></div>
+              <h5 class="mb-1">No Members Match Your Search</h5>
+              <p class="text-muted" *ngIf="searchTerm()">Try a different search term.</p>
+              <p class="text-muted" *ngIf="!searchTerm()">There are no members to display. Add one using the form.</p>
+              <p class="text-muted">Use the form on the left to add the first member.</p>
+            </div>
+          </ng-template>
+        </div>
+        <!-- Pagination Controls -->
+        <div class="card-footer bg-white border-0 py-3" *ngIf="totalPages() > 1">
+          <nav aria-label="Member list pagination">
+            <ul class="pagination justify-content-end mb-0">
+              <li class="page-item" [class.disabled]="currentPage() === 1">
+                <a class="page-link" href="#"
+                  (click)="goToPage(currentPage() - 1); $event.preventDefault()">Previous</a>
+              </li>
+              <li class="page-item" *ngFor="let page of [].constructor(totalPages()); let i = index"
+                [class.active]="currentPage() === i + 1">
+                <a class="page-link" href="#" (click)="goToPage(i + 1); $event.preventDefault()">{{ i + 1 }}</a>
+              </li>
+              <li class="page-item" [class.disabled]="currentPage() === totalPages()">
+                <a class="page-link" href="#" (click)="goToPage(currentPage() + 1); $event.preventDefault()">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Payment Modal remains the same -->
+  <app-payment-tracking *ngIf="selectedMemberForPayment" [member]="selectedMemberForPayment" (close)="onModalClosed()">
+  </app-payment-tracking>
+</div>
+
+<app-member-details *ngIf="selectedMemberForDetails()" [member]="selectedMemberForDetails()!"
+  (close)="onDetailsModalClosed()">
+</app-member-details>

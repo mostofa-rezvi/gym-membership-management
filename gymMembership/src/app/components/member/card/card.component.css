@@ -1,0 +1,28 @@
+.member-card {
+  border-radius: 0.5rem;
+  border-left: 5px solid #0d6efd;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.bronze-badge {
+  background-color: #cd7f32;
+  color: white;
+}
+.silver-badge {
+  background-color: #a7a7a7;
+  color: white;
+}
+.gold-badge {
+  background-color: #ffc400;
+  color: #212529;
+}
+.platinum-badge {
+  background-color: #e5e4e2;
+  color: #212529;
+  border: 1px solid #ccc;
+}
