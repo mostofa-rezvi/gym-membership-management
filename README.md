@@ -72,7 +72,7 @@ ym-membership-management/gym-backend
 
    ```bash
    git clone https://github.com/your-username/gym-membership-management.git
-   cd gym-membership-management/gym-backend
+   cd gym-membership-management/gymMember
    ```
 
 2. Configure MySQL in `application.properties`:
