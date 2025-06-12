@@ -172,14 +172,3 @@ Would you like to:
 - 📑 Auto-generate Swagger API documentation?
 
 Just let me know — happy to help!
-```
-
----
-
-Let me know if you'd like me to:
-
-- Format and provide this as a downloadable `.md` file
-- Add a table of contents or badges (e.g., build passing, license)
-- Help you with Swagger annotations or Docker setup
-
-I'm ready when you are 🚀
