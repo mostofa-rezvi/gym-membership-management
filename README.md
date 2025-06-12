@@ -47,7 +47,7 @@ A full-stack Gym Membership Management System built with **Angular 18** and **Sp
 | **Frontend**   | Angular 18, TypeScript, RxJS, Chart.js       |
 | **Backend**    | Spring Boot 3, Java 17+, Spring Data JPA     |
 | **Database**   | MySQL                                        |
-| **Styling**    | Bootstrap / Tailwind CSS                     |
+| **Styling**    | Bootstrap / CSS                     |
 | **Tools**      | REST API, Postman, Maven, Git                |
 
 ---
