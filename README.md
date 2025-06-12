@@ -28,14 +28,14 @@ A full-stack Gym Membership Management System built with **Angular 18** and **Sp
 
 ### 🛠️ Backend (Spring Boot)
 
-- **Entities**
+- 💳 **Entities**
   - `Member`: Stores personal and membership info
   - `Payment`: Tracks payment details linked to members
 
-- **RESTful APIs**
+- 🔁 **RESTful APIs**
   - Full CRUD for Member & Payment records
 
-- **Database**
+- ✅ **Database**
   - MySQL with Spring Data JPA
 
 ---
