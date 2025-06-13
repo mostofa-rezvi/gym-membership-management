@@ -1,4 +1,4 @@
-# 🏋️‍♂️ Gym Membership Management System
+# 💪 Gym Membership Management System
 
 A full-stack Gym Membership Management System built with **Angular 18** and **Spring Boot**. It allows gym staff to register members, manage payments, and view insightful analytics using dynamic charts. Ideal for small to medium-sized fitness centers looking to modernize their member tracking and finances.
 
