@@ -1,7 +1,10 @@
 # 💪 Gym Membership Management System
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=netlify)](https://fitzone-gym-portal.netlify.app/)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/your-username/gym-membership-management)
+
+---
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/mostofa-rezvi/gym-membership-management)
 
 
 A full-stack Gym Membership Management System built with **Angular 18** and **Spring Boot**. It allows gym staff to register members, manage payments, and view insightful analytics using dynamic charts. Ideal for small to medium-sized fitness centers looking to modernize their member tracking and finances.
