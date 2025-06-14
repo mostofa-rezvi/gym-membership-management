@@ -1,6 +1,194 @@
+/*
+ * =========================================
+ *  Monochrome & Professional Modal CSS
+ * =========================================
+ * A sophisticated, clean, and minimalist design.
+ */
+
+/* --- 1. Backdrop & Modal Animation --- */
+.modal-backdrop.show {
+  /* A slightly darker, more professional glass effect */
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: rgba(10, 20, 30, 0.4);
+}
+
+.modal.show .modal-dialog {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-dialog {
+  /* An elegant slide-up animation */
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.3s ease-out;
+}
+
+/* --- 2. Main Modal Content Styling --- */
+.modal-content {
+  border-radius: 12px;
+  border: 1px solid #dee2e6; /* A subtle border for definition */
+  background-color: #ffffff;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* --- 3. Modal Header --- */
+.modal-header {
+  background-color: transparent; /* Clean white */
+  padding: 1.75rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
 .avatar-lg {
-  width: 60px;
-  height: 60px;
+  /* A sophisticated outline style */
+  width: 56px;
+  height: 56px;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 600;
+  background-color: transparent !important;
+  border: 2px solid #212529;
+  color: #212529 !important; /* Force black text */
+  box-shadow: none;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #212529;
+}
+
+.modal-header .text-muted {
+  color: #6c757d !important;
+}
+
+.btn-close {
+  filter: grayscale(1) opacity(0.7);
+}
+.btn-close:hover {
+  filter: grayscale(1) opacity(1);
+}
+
+/* --- 4. Modal Body & Sections --- */
+.modal-body {
+  padding: 1.75rem;
+}
+
+.modal-body h6 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6c757d; /* Muted gray for section titles */
+  margin-bottom: 1.25rem !important;
+  border: none; /* Remove the border from the previous design */
+}
+
+/* --- 5. Definition List (Membership Details) --- */
+dl.row {
+  font-size: 1rem;
+}
+
+dt.col-sm-5 {
+  font-weight: 400; /* Lighter weight for labels */
+  color: #6c757d;
+  padding-bottom: 1rem;
+}
+
+dd.col-sm-7 {
+  font-weight: 600; /* Bolder weight for data */
+  color: #212529;
+  padding-bottom: 1rem;
+}
+
+/* --- 6. Minimalist Badge Styling --- */
+.badge {
+  padding: 0.5em 0.9em;
+  font-weight: 500;
+  font-size: 0.8rem;
+  border-radius: 999px; /* Pill shape */
+  border: 1px solid #ced4da;
+}
+
+.bg-primary-subtle,
+.bg-secondary-subtle {
+  background-color: #f1f3f5 !important;
+  color: #212529 !important;
+}
+
+/* --- 7. Clean Table Design --- */
+.table-responsive {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  max-height: 220px !important; /* Increased height */
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0 0.5rem; /* Vertical spacing between rows */
+}
+
+.table thead th {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6c757d;
+  background-color: transparent;
+  border: none;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+}
+
+/* Remove striping and use borders instead */
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: transparent;
+}
+
+.table tbody tr {
+  background-color: #f8f9fa; /* Light gray background for each row */
+  border-radius: 8px; /* This won't work without border-collapse, but let's try a workaround */
+}
+.table tbody td {
+  border: none;
+  padding: 0.75rem;
+  font-weight: 500;
+  vertical-align: middle;
+}
+.table tbody td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.table tbody td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* --- 8. "No Payments" Empty State --- */
+.text-center.text-muted.p-3 {
+  background-color: transparent !important;
+  border: none;
+  font-size: 0.95rem;
+  color: #6c757d !important;
+  padding: 2rem 1rem !important;
+}
+
+/* --- 9. Modal Footer --- */
+.modal-footer {
+  padding: 1.25rem 1.75rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #343a40;
+  border-color: #343a40;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+}
+.modal-footer .btn-secondary:hover {
+  background-color: #212529;
+  border-color: #212529;
 }

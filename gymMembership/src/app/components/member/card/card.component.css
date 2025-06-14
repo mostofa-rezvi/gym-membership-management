@@ -1,28 +1,105 @@
+/*
+ * =========================================
+ *  DESIGN 2: Elegant Dark Neomorphism
+ * =========================================
+ *  (Best viewed on a dark background like #2c3038)
+ */
+
 .member-card {
-  border-radius: 0.5rem;
-  border-left: 5px solid #0d6efd;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border-radius: 20px;
+  background: #343842;
+  border: none;
+  box-shadow: 8px 8px 16px #23262b, -8px -8px 16px #454a59;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .member-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 10px #23262b, -5px -5px 10px #454a59;
 }
 
-.bronze-badge {
-  background-color: #cd7f32;
-  color: white;
+/* --- Card Header & Title --- */
+.member-card .card-header {
+  background: transparent;
+  border-bottom: 1px solid #454a59;
+  padding: 1.5rem;
 }
-.silver-badge {
-  background-color: #a7a7a7;
-  color: white;
+
+.member-card .card-title {
+  color: #e4e6eb;
+  font-weight: 600;
 }
-.gold-badge {
-  background-color: #ffc400;
-  color: #212529;
+
+/* --- Badge Styling (Inset "Stamped" look) --- */
+.member-card .badge {
+  padding: 0.5em 1em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background: #343842;
+  box-shadow: inset 3px 3px 5px #23262b, inset -3px -3px 5px #454a59;
+  text-shadow: 0 0 5px currentColor;
 }
-.platinum-badge {
-  background-color: #e5e4e2;
-  color: #212529;
-  border: 1px solid #ccc;
+
+.member-card .bronze-badge {
+  color: #d98a4a;
+}
+.member-card .silver-badge {
+  color: #c0c0c0;
+}
+.member-card .gold-badge {
+  color: #f7d154;
+}
+.member-card .platinum-badge {
+  color: #e5e4e2;
+}
+
+/* --- Card Body & Details --- */
+.member-card .card-body {
+  color: #adb5bd;
+  padding: 1.5rem;
+}
+
+.member-card .card-body p {
+  margin-bottom: 0.5rem;
+}
+
+/* --- Card Footer & Buttons (Neomorphic Buttons) --- */
+.member-card .card-footer {
+  background: transparent;
+  border-top: 1px solid #454a59;
+  padding: 1rem 1.5rem;
+}
+
+.member-card .btn {
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  padding: 0.5rem 1rem;
+  box-shadow: 5px 5px 10px #23262b, -5px -5px 10px #454a59;
+  transition: all 0.2s ease-in-out;
+}
+
+.member-card .btn:hover {
+  transform: translateY(-2px);
+}
+
+.member-card .btn:active {
+  transform: translateY(0);
+  box-shadow: inset 3px 3px 5px #23262b, inset -3px -3px 5px #454a59;
+}
+
+.member-card .btn-outline-success {
+  background: #343842;
+  color: #28a745;
+}
+.member-card .btn-outline-success:active {
+  color: #218838;
+}
+
+.member-card .btn-outline-danger {
+  background: #343842;
+  color: #dc3545;
+}
+.member-card .btn-outline-danger:active {
+  color: #c82333;
 }
