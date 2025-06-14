@@ -1,47 +1,75 @@
-/* Add to your component's .scss or styles.scss */
+/* --- Modern Dashboard Theme --- */
+
+/* General Dashboard Background */
+.dashboard-background {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2f3, #ffffff);
+  padding: 3rem 1rem;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
 
 /* Card Enhancements */
 .card {
   border: none;
-  border-radius: 12px;
+  border-radius: 16px;
   background: #ffffff;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
 }
 
 .card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #343a40;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #212529;
+  letter-spacing: 0.5px;
 }
 
-/* Chart wrapper styling */
+/* Chart Section Styling */
 .card-body {
-  padding: 2rem 1.5rem;
-  background: #f8f9fa;
-  border-radius: 0 0 12px 12px;
+  padding: 2.5rem 2rem;
+  background: #f9fbfd;
+  border-radius: 0 0 16px 16px;
+  position: relative;
 }
 
-/* No data message styling */
+/* No data message */
 .text-muted {
   font-style: italic;
-  font-size: 1rem;
-  color: #6c757d !important;
+  font-size: 1.05rem;
+  color: #adb5bd !important;
+  margin-top: 2rem;
 }
 
-/* ngx-charts responsive size */
+/* ngx-charts responsiveness and size */
 :host ::ng-deep ngx-charts-bar-vertical,
 :host ::ng-deep ngx-charts-line-chart {
   display: block;
   width: 100%;
-  height: 350px !important;
+  height: 370px !important;
 }
 
-/* Row gap override for better spacing */
+/* Spacing for chart columns */
 .row.g-4 {
-  row-gap: 2rem !important;
+  row-gap: 2.5rem !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 2rem 1.25rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  :host ::ng-deep ngx-charts-bar-vertical,
+  :host ::ng-deep ngx-charts-line-chart {
+    height: 300px !important;
+  }
 }

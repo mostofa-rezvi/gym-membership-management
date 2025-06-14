@@ -12,11 +12,13 @@ import { ContactComponent } from './home/pages/contact/contact.component';
 import { BlogComponent } from './home/pages/blog/blog.component';
 import { LoginComponent } from './security/components/login/login.component';
 import { MembershipDashboardComponent } from './components/membership-dashboard/membership-dashboard.component';
+import { AuthGuard } from './security/guard/authguard.guard';
 
 const routes: Routes = [
   { path: '', component: BodyComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: MembershipDashboardComponent },
+  // { path: 'dashboard', component: MembershipDashboardComponent, canActivate: [AuthGuard] },
+   { path: 'dashboard', component: MembershipDashboardComponent },
 
   // Demo Pages 
   { path: 'about', component: AboutUsComponent },

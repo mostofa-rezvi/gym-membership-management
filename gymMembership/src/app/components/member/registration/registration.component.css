@@ -1,84 +1,117 @@
-/* Card styling */
-.card {
-  border: none;
+/* --- Warm Modern Form Styling --- */
+
+/* Card Container */
+.card.h-100.shadow-sm {
   border-radius: 16px;
-  background: #fff;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
+  background-color: #fff8f1;
+  box-shadow: 0 6px 24px rgba(179, 84, 30, 0.12);
+  transition: all 0.3s ease;
 }
 
-.card:hover {
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
-}
-
-/* Card header */
-.card-header {
+/* Card Header */
+.card-header.bg-primary {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b) !important;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
   padding: 1rem 1.5rem;
-  background: linear-gradient(to right, #007bff, #0056b3);
-  color: #ffffff;
-  border-bottom: none;
-  font-size: 1.15rem;
+  color: #fff !important;
   font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
 }
 
-/* Form labels */
+/* Icon inside header */
+.card-header i.bi {
+  color: #fff !important;
+  font-size: 1.2rem;
+}
+
+/* Card Body */
+.card-body {
+  padding: 2rem;
+  background-color: #fff4e6;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+/* Form Labels */
 .form-label {
-  font-weight: 500;
-  color: #343a40;
+  font-weight: 600;
+  color: #b3541e;
+  margin-bottom: 0.4rem;
 }
 
-/* Inputs & Selects */
+/* Input / Select Fields */
 .form-control,
 .form-select {
   border-radius: 8px;
-  border-color: #dee2e6;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #ffdab9;
+  background-color: #fffdfc;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .form-control:focus,
 .form-select:focus {
-  border-color: #80bdff;
-  box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+  border-color: #ff9966;
+  box-shadow: 0 0 0 0.2rem rgba(255, 153, 102, 0.25);
 }
 
-/* Checkbox styling */
-.form-check {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-right: 1rem;
-}
-
+/* Checkbox Styling */
 .form-check-input {
-  width: 1.1rem;
-  height: 1.1rem;
-  border-radius: 0.25rem;
+  border-color: #ffa07a;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 .form-check-input:checked {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: #ff7e5f;
+  border-color: #ff7e5f;
+  box-shadow: 0 0 4px rgba(255, 126, 95, 0.6);
 }
 
 .form-check-label {
-  font-size: 0.95rem;
-  color: #495057;
-  cursor: pointer;
+  margin-left: 0.4rem;
+  color: #5a3e36;
+  font-weight: 500;
 }
 
-/* Submit button */
-.btn {
-  font-size: 1rem;
-  padding: 0.75rem;
+/* Checkbox container */
+.d-flex.flex-wrap.gap-3 {
+  margin-top: 0.5rem;
+}
+
+/* Submit Button */
+.btn.btn-primary {
+  background: linear-gradient(90deg, #ff7e5f, #ff9966);
+  border: none;
   border-radius: 10px;
-  transition: background-color 0.3s ease;
+  font-weight: 600;
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: background 0.3s ease-in-out, transform 0.15s;
 }
 
-.btn:disabled {
-  background-color: #6c757d;
-  border-color: #6c757d;
+.btn.btn-primary:hover {
+  background: linear-gradient(90deg, #ff9966, #ff7e5f);
+  transform: scale(1.02);
+}
+
+.btn.btn-primary:disabled {
+  background-color: #f0b69b !important;
   cursor: not-allowed;
-  opacity: 0.75;
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 1.5rem 1rem;
+  }
+
+  .btn.btn-primary {
+    font-size: 0.95rem;
+  }
+
+  .card-header h5 {
+    font-size: 1.15rem;
+  }
 }

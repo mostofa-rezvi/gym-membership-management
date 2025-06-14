@@ -10,7 +10,7 @@ import { catchError, of, tap } from 'rxjs';
   providedIn: 'root',
 })
 export class MemberService {
-  private apiUrl = 'http://localhost:8080/api/members';
+  private apiUrl = 'http://localhost:8090/api/members';
 
   // --- State Signals ---
   private membersSignal: WritableSignal<Member[]> = signal<Member[]>([]);

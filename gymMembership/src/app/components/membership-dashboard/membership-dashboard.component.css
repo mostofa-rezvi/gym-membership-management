@@ -1,81 +1,188 @@
-/* Card Styling */
+/* --- Layout & Background --- */
+.container-fluid.bg-light {
+  background: linear-gradient(135deg, #fffaf5, #fff4e6);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* --- Page Header --- */
+.page-header h1 {
+  color: #a25f4b;
+}
+
+.page-header p {
+  color: #7a5543;
+  font-size: 1rem;
+}
+
+/* --- Cards --- */
 .card {
-  border-radius: 1rem;
-  border: none;
-  background: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.3s ease-in-out;
+  border-radius: 16px;
+  background-color: #fff8f1;
+  box-shadow: 0 4px 16px rgba(209, 96, 61, 0.08);
+  transition: all 0.25s ease-in-out;
 }
 
 .card:hover {
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(209, 96, 61, 0.12);
 }
 
-/* Header Styling */
+/* --- Card Header for Member List --- */
 .card-header {
-  background: linear-gradient(to right, #0d6efd, #6610f2);
-  color: #fff;
-  border-radius: 1rem 1rem 0 0;
-  padding: 1.25rem 1.5rem;
-  border-bottom: none;
+  background: linear-gradient(90deg, #ff9966, #ff7e5f);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 1rem 1.25rem;
+  color: #fff !important;
 }
 
 .card-header h5 {
+  font-size: 1.2rem;
   font-weight: 600;
-  font-size: 1.4rem;
-  margin-bottom: 0;
-  display: flex;
-  align-items: center;
 }
 
-/* Body Styling */
-.card-body {
-  padding: 1.5rem;
+/* --- Search Input --- */
+input.form-control {
+  border-radius: 8px;
+  border: 1px solid #ffd4c4;
+  background-color: #fff;
+  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-/* App Card Container */
-.d-flex.flex-column.gap-3 {
-  gap: 1.5rem !important;
+input.form-control:focus {
+  border-color: #ff7e5f;
+  box-shadow: 0 0 0 0.2rem rgba(255, 126, 95, 0.25);
 }
 
-/* Empty Template Styling */
-ng-template#noMembers::before {
-  content: "No members found.";
-  display: block;
-  text-align: center;
-  color: #888;
-  font-style: italic;
-  padding: 2rem 1rem;
+/* --- Member List Items --- */
+.list-group-item {
+  background-color: #fffdfb;
+  transition: background 0.2s ease-in-out;
+  border-bottom: 1px solid #fae3d4;
+  border-left: 4px solid transparent;
+  cursor: pointer;
 }
 
-/* Responsive tweaks */
+.list-group-item:hover {
+  background-color: #fff1e8;
+  border-left: 4px solid #ff9966;
+}
+
+/* --- Avatar Styling --- */
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #ffe0cc;
+  color: #a25f4b;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Member Info --- */
+h6.fw-bold {
+  color: #a25f4b;
+}
+
+.small.text-muted {
+  color: #8b6f5a !important;
+}
+
+/* --- Badges for Membership Type --- */
+.badge.BRONZE {
+  background-color: #cd7f32;
+  color: white;
+}
+
+.badge.SILVER {
+  background-color: #c0c0c0;
+  color: #333;
+}
+
+.badge.GOLD {
+  background-color: #ffd700;
+  color: #5a4a00;
+}
+
+.badge.PLATINUM {
+  background: linear-gradient(135deg, #e5e4e2, #c8c6c4);
+  color: #333;
+}
+
+/* --- Payment Status Badges --- */
+.badge.success {
+  background-color: #60a15d;
+  color: #fff;
+}
+
+.badge.warning {
+  background-color: #ffc107;
+  color: #5f4d00;
+}
+
+.badge.danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* --- Action Buttons --- */
+.btn-outline-primary {
+  border-color: #ff7e5f;
+  color: #ff7e5f;
+}
+
+.btn-outline-primary:hover {
+  background-color: #ff7e5f;
+  color: #fff;
+}
+
+.btn-outline-danger {
+  border-color: #d1603d;
+  color: #d1603d;
+}
+
+.btn-outline-danger:hover {
+  background-color: #d1603d;
+  color: #fff;
+}
+
+/* --- No Members Message --- */
+.text-center.p-5 {
+  background-color: #fff4e6;
+  border-radius: 12px;
+  color: #b3541e;
+}
+
+.display-4.text-muted {
+  color: #ffb199 !important;
+}
+
+/* --- Pagination --- */
+.pagination .page-link {
+  border-radius: 8px;
+  border: 1px solid #ffd4c4;
+  color: #a25f4b;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #ff7e5f;
+  color: #fff;
+  border-color: #ff7e5f;
+}
+
+/* --- Responsive Improvements --- */
 @media (max-width: 768px) {
   .card-header h5 {
     font-size: 1rem;
   }
 
-  .card-body {
-    padding: 1rem;
+  .avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  input.form-control {
+    font-size: 0.9rem;
   }
 }
-
-
-
-
-
-
-
-
-  .avatar {
-    width: 48px;
-    height: 48px;
-    font-size: 1.1rem;
-    font-weight: bold;
-  }
-  .page-header {
-    border-bottom: 1px solid var(--bs-border-color-translucent);
-    padding-bottom: 1rem;
-  }
-  .list-group-item-action:hover {
-    background-color: var(--bs-light-bg-subtle);
-  }

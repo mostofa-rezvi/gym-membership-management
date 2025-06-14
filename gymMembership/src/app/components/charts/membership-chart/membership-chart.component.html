@@ -1,34 +1,57 @@
-<div class="d-flex align-items-center justify-content-center mt-5 md-5">
-  <div class="container row justify-content-center g-4">
-    <div class="col-lg-6">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-3">Members by Type</h5>
-          <div *ngIf="membersByType().length > 0; else noMemberData">
-            <ngx-charts-bar-vertical [view]="view" [results]="membersByType()" [xAxis]="true" [yAxis]="true"
-              [legend]="false" xAxisLabel="Membership Type" yAxisLabel="Number of Members">
-            </ngx-charts-bar-vertical>
+<div class="dashboard-background">
+  <div class="d-flex align-items-center justify-content-center mt-5 md-5">
+    <div class="container row justify-content-center g-4">
+      <div class="col-lg-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-3">Members by Type</h5>
+            <div *ngIf="membersByType().length > 0; else noMemberData">
+              <ngx-charts-bar-vertical
+                [view]="view"
+                [results]="membersByType()"
+                [xAxis]="true"
+                [yAxis]="true"
+                [legend]="false"
+                xAxisLabel="Membership Type"
+                yAxisLabel="Number of Members"
+              >
+              </ngx-charts-bar-vertical>
+            </div>
+            <ng-template #noMemberData>
+              <p class="text-muted mt-5">No member data to display.</p>
+            </ng-template>
           </div>
-          <ng-template #noMemberData>
-            <p class="text-muted mt-5">No member data to display.</p>
-          </ng-template>
         </div>
       </div>
-    </div>
 
-    <div class="col-lg-6">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-3">Monthly Revenue</h5>
-          <div
-            *ngIf="monthlyRevenue() && monthlyRevenue().length > 0 && monthlyRevenue()[0].series.length > 0; else noRevenueData">
-            <ngx-charts-line-chart [view]="view" [results]="monthlyRevenue()" [xAxis]="true" [yAxis]="true"
-              [legend]="false" [autoScale]="true" xAxisLabel="Month" yAxisLabel="Revenue ($)">
-            </ngx-charts-line-chart>
+      <div class="col-lg-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-3">Monthly Revenue</h5>
+            <div
+              *ngIf="
+                monthlyRevenue() &&
+                  monthlyRevenue().length > 0 &&
+                  monthlyRevenue()[0].series.length > 0;
+                else noRevenueData
+              "
+            >
+              <ngx-charts-line-chart
+                [view]="view"
+                [results]="monthlyRevenue()"
+                [xAxis]="true"
+                [yAxis]="true"
+                [legend]="false"
+                [autoScale]="true"
+                xAxisLabel="Month"
+                yAxisLabel="Revenue ($)"
+              >
+              </ngx-charts-line-chart>
+            </div>
+            <ng-template #noRevenueData>
+              <p class="text-muted mt-5">No revenue data to display.</p>
+            </ng-template>
           </div>
-          <ng-template #noRevenueData>
-            <p class="text-muted mt-5">No revenue data to display.</p>
-          </ng-template>
         </div>
       </div>
     </div>
