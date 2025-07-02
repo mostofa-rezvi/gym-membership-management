@@ -14,7 +14,7 @@ A full-stack Gym Membership Management System built with **Angular 18** and **Sp
 
 ## Features
 
-### 🔧 Frontend (Angular 18)
+###  Frontend (Angular 18)
 
 -  **Member Registration Form**
   - Inputs: Name, Email, Phone
