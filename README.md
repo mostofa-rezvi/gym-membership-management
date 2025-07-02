@@ -1,4 +1,4 @@
-# 💪 Gym Membership Management System
+# Gym Membership Management System
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=netlify)](https://fitzone-gym-portal.netlify.app/)
 
@@ -12,43 +12,43 @@ A full-stack Gym Membership Management System built with **Angular 18** and **Sp
 
 ---
 
-## 📋 Features
+## Features
 
 ### 🔧 Frontend (Angular 18)
 
-- ✅ **Member Registration Form**
+-  **Member Registration Form**
   - Inputs: Name, Email, Phone
   - Date Pickers: DOB, Join Date
   - Dropdown: Membership Type (Monthly, Quarterly, Yearly)
   - Checkbox: Optional services (Personal Trainer, Diet Plan)
 
-- 💳 **Payment Tracking Modal**
+-  **Payment Tracking Modal**
   - Fields: Amount, Payment Date, Method, Membership Period
 
-- 🔁 **Component Communication**
+-  **Component Communication**
   - `MembershipDashboard` (Parent) ↔ `MemberCard` (Child)
 
-- 📊 **Data Visualization**
+-  **Data Visualization**
   - **Bar Chart:** Members per membership type
   - **Line Chart:** Monthly revenue trends
 
 ---
 
-### 🛠️ Backend (Spring Boot)
+###  Backend (Spring Boot)
 
-- 💳 **Entities**
+-  **Entities**
   - `Member`: Stores personal and membership info
   - `Payment`: Tracks payment details linked to members
 
-- 🔁 **RESTful APIs**
+-  **RESTful APIs**
   - Full CRUD for Member & Payment records
 
-- ✅ **Database**
+-  **Database**
   - MySQL with Spring Data JPA
 
 ---
 
-## 🧱 Tech Stack
+##  Tech Stack
 
 | Category       | Technologies                                 |
 |----------------|----------------------------------------------|
@@ -60,9 +60,9 @@ A full-stack Gym Membership Management System built with **Angular 18** and **Sp
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
-### ✅ Prerequisites
+###  Prerequisites
 
 - Node.js (v18+)
 - Angular CLI
@@ -72,7 +72,7 @@ A full-stack Gym Membership Management System built with **Angular 18** and **Sp
 
 ---
 
-### ▶️ Backend Setup (Spring Boot)
+###  Backend Setup (Spring Boot)
 
 ym-membership-management/gym-backend
 
@@ -124,9 +124,9 @@ ym-membership-management/gym-backend
 
 ---
 
-## 🔐 API Endpoints
+##  API Endpoints
 
-### 👤 Member Controller
+###  Member Controller
 
 ```http
 GET    /api/members
@@ -135,7 +135,7 @@ PUT    /api/members/{id}
 DELETE /api/members/{id}
 ```
 
-### 💳 Payment Controller
+###  Payment Controller
 
 ```http
 GET    /api/payments
@@ -147,36 +147,36 @@ DELETE /api/payments/{id}
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Mostofa Rezvi**  
-📧 mostofa.aminur.rezvi@gmail.com  
-📍 Azimpur, Dhaka
+ mostofa.aminur.rezvi@gmail.com  
+ Azimpur, Dhaka
 
 ---
 
-## 🌟 Future Improvements
+##  Future Improvements
 
-- 🔐 JWT-based Authentication & Authorization  
-- 🧾 Invoice generation with PDF export  
-- 📧 Email reminders for upcoming or missed payments  
-- 🖼️ Member profile picture uploads  
-- 🔍 Enhanced dashboard filters and search functionality  
+-  JWT-based Authentication & Authorization  
+-  Invoice generation with PDF export  
+-  Email reminders for upcoming or missed payments  
+-  Member profile picture uploads  
+-  Enhanced dashboard filters and search functionality  
 
 ---
 
-## 📃 License
+##  License
 
 This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
-## 💬 Optional Add-ons
+##  Optional Add-ons
 
 Would you like to:
 
-- 🔧 Add Docker support for easier deployment?
-- 🌐 Set up a live demo (e.g., Vercel for frontend, Render or Railway for backend)?
-- 📑 Auto-generate Swagger API documentation?
+-  Add Docker support for easier deployment?
+-  Set up a live demo (e.g., Vercel for frontend, Render or Railway for backend)?
+-  Auto-generate Swagger API documentation?
 
 Just let me know — happy to help!
